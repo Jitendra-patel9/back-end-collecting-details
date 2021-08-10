@@ -11,7 +11,7 @@ app.get("/weather",function(req,res){
 
 app.post("/weather",function(req,res){
   const cityName=req.body.cityname;
-  const url="https://api.openweathermap.org/data/2.5/weather?q="+cityName+"&appid=4bd3ef1b28265222cfa608188e0d92fd"
+  const url=""
   https.get(url,function(response){
     response.on("data",function(data){
       const weatherData = JSON.parse(data);
@@ -47,10 +47,10 @@ app.post("/",function(req,res){
   }
   //console.log(data);// it is in json form structure we have to convert instingfy form
   const jsonData = JSON.stringify(data);
-  const url="https://us7.api.mailchimp.com/3.0/lists/c66f1f323b"
+  const url=""
   const options={
     method:"POST",
-    auth:"jitu999:5e7f7e955703c159c8f3063d65b55d16-us7"
+    auth:""
   }
 
   const request=https.request(url,options,function(response){
@@ -80,5 +80,3 @@ app.listen(process.env.PORT || 3000,function(){
 })
 
 
-// 4bd3ef1b28265222cfa608188e0d92fd  weather Api key
-//77d81cf9d0cf6a43c36cd09ec09b2498-us7  mailchimp api key
